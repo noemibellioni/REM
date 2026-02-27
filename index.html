@@ -332,6 +332,117 @@
   .mag-howto-title { font-family:'Cinzel',serif; font-size:0.85rem; color:var(--orange); letter-spacing:0.15em; margin-bottom:0.7rem; }
   .mag-howto-text { font-family:'Cormorant Garamond',serif; font-size:1rem; font-style:italic; color:var(--grey); line-height:1.7; }
 
+  /* ===== SPONSOR PAGE ===== */
+  #page-sponsor { background:var(--black); min-height:100vh; }
+
+  .sp-hero {
+    min-height:38vh; display:flex; flex-direction:column;
+    justify-content:flex-end; padding:10rem 3rem 4rem;
+    position:relative; overflow:hidden;
+    background:linear-gradient(160deg, var(--purple-deep) 0%, var(--black) 70%);
+    border-bottom:1px solid rgba(73,39,79,0.3);
+  }
+  .sp-hero::after {
+    content:''; position:absolute; inset:0;
+    background:radial-gradient(ellipse 50% 70% at 10% 60%, rgba(73,39,79,0.35), transparent 65%);
+    pointer-events:none;
+  }
+  .sp-hero-label { font-size:0.58rem; letter-spacing:0.5em; text-transform:uppercase; color:var(--orange); margin-bottom:1rem; position:relative; z-index:1; }
+  .sp-hero-title { font-family:'Cinzel',serif; font-size:clamp(2.5rem,7vw,5.5rem); font-weight:400; color:var(--ghost); letter-spacing:0.06em; line-height:1; position:relative; z-index:1; }
+  .sp-hero-desc { font-family:'Cormorant Garamond',serif; font-size:1.15rem; font-style:italic; color:var(--tertiary); max-width:560px; line-height:1.8; margin-top:1.5rem; position:relative; z-index:1; }
+
+  .sp-content { max-width:1100px; margin:0 auto; padding:5rem 3rem; }
+
+  /* Tier heading */
+  .sp-tier { margin-bottom:5rem; }
+  .sp-tier-header { display:flex; align-items:center; gap:1.5rem; margin-bottom:2.5rem; }
+  .sp-tier-line { flex:1; height:1px; }
+  .sp-tier-label {
+    font-family:'Cinzel',serif; font-size:0.75rem; letter-spacing:0.35em; text-transform:uppercase;
+    padding:0.4rem 1.2rem; border:1px solid; white-space:nowrap;
+  }
+
+  /* Gold tier */
+  .sp-tier.gold .sp-tier-line { background:linear-gradient(to right, transparent, var(--orange), transparent); }
+  .sp-tier.gold .sp-tier-label { border-color:var(--orange); color:var(--orange); }
+  /* Silver tier */
+  .sp-tier.silver .sp-tier-line { background:linear-gradient(to right, transparent, var(--tertiary), transparent); }
+  .sp-tier.silver .sp-tier-label { border-color:var(--tertiary); color:var(--tertiary); }
+  /* Partner tier */
+  .sp-tier.partner .sp-tier-line { background:linear-gradient(to right, transparent, var(--grey), transparent); }
+  .sp-tier.partner .sp-tier-label { border-color:var(--grey); color:var(--grey); }
+
+  /* Sponsor grid */
+  .sp-grid { display:grid; gap:1.5rem; }
+  .sp-tier.gold   .sp-grid { grid-template-columns:repeat(auto-fill, minmax(260px,1fr)); }
+  .sp-tier.silver .sp-grid { grid-template-columns:repeat(auto-fill, minmax(200px,1fr)); }
+  .sp-tier.partner .sp-grid { grid-template-columns:repeat(auto-fill, minmax(150px,1fr)); }
+
+  /* Sponsor card */
+  .sp-card {
+    border:1px solid rgba(73,39,79,0.35);
+    background:rgba(73,39,79,0.05);
+    display:flex; flex-direction:column; align-items:center; justify-content:center;
+    padding:2.5rem 2rem; gap:1rem;
+    transition:border-color 0.35s, background 0.35s, transform 0.35s;
+    cursor:none; text-decoration:none;
+    position:relative; overflow:hidden;
+  }
+  .sp-card:hover { border-color:rgba(245,167,127,0.4); background:rgba(73,39,79,0.12); transform:translateY(-3px); }
+  .sp-tier.gold   .sp-card { padding:3rem 2.5rem; }
+  .sp-tier.silver .sp-card { padding:2rem 1.8rem; }
+  .sp-tier.partner .sp-card { padding:1.8rem 1.5rem; }
+
+  /* Logo area */
+  .sp-logo-box {
+    width:100%; display:flex; align-items:center; justify-content:center;
+  }
+  .sp-tier.gold   .sp-logo-box { height:80px; }
+  .sp-tier.silver .sp-logo-box { height:60px; }
+  .sp-tier.partner .sp-logo-box { height:44px; }
+
+  .sp-logo-box img { max-width:100%; max-height:100%; object-fit:contain; filter:brightness(0) invert(1); opacity:0.75; transition:opacity 0.3s; }
+  .sp-card:hover .sp-logo-box img { opacity:1; }
+
+  .sp-logo-placeholder {
+    font-family:'Cinzel',serif; letter-spacing:0.15em; color:rgba(211,211,211,0.2);
+    text-align:center; line-height:1.3;
+  }
+  .sp-tier.gold   .sp-logo-placeholder { font-size:1.1rem; }
+  .sp-tier.silver .sp-logo-placeholder { font-size:0.9rem; }
+  .sp-tier.partner .sp-logo-placeholder { font-size:0.75rem; }
+
+  .sp-name {
+    font-family:'Raleway',sans-serif; font-size:0.58rem; letter-spacing:0.2em;
+    text-transform:uppercase; color:var(--grey); text-align:center;
+  }
+
+  /* CTA become sponsor */
+  .sp-cta-box {
+    margin-top:5rem; padding:4rem 3rem;
+    border:1px solid rgba(73,39,79,0.4);
+    background:linear-gradient(135deg, rgba(73,39,79,0.1), rgba(19,11,22,0.8));
+    text-align:center;
+  }
+  .sp-cta-label { font-size:0.58rem; letter-spacing:0.4em; text-transform:uppercase; color:var(--orange); margin-bottom:1rem; display:block; }
+  .sp-cta-title { font-family:'Cinzel',serif; font-size:clamp(1.4rem,3vw,2.2rem); color:var(--ghost); margin-bottom:1.5rem; line-height:1.3; }
+  .sp-cta-text { font-family:'Cormorant Garamond',serif; font-size:1.1rem; font-style:italic; color:var(--tertiary); max-width:560px; margin:0 auto 2.5rem; line-height:1.8; }
+  .sp-cta-email {
+    display:inline-block; font-family:'Raleway',sans-serif;
+    font-size:0.63rem; letter-spacing:0.3em; text-transform:uppercase;
+    padding:1rem 2.5rem; border:1px solid var(--orange); color:var(--orange);
+    text-decoration:none; transition:all 0.35s; cursor:none;
+  }
+  .sp-cta-email:hover { background:var(--orange); color:var(--black); }
+
+  /* How-to sponsor */
+  .sp-howto {
+    margin-top:3rem; padding:1.8rem 2.5rem;
+    border:1px dashed rgba(73,39,79,0.4); background:rgba(73,39,79,0.04);
+  }
+  .sp-howto-title { font-family:'Cinzel',serif; font-size:0.8rem; color:var(--orange); letter-spacing:0.15em; margin-bottom:0.6rem; }
+  .sp-howto-text { font-family:'Cormorant Garamond',serif; font-size:0.95rem; font-style:italic; color:var(--grey); line-height:1.7; }
+
   /* RESPONSIVE */
   @media (max-width:768px) {
     nav { padding:1.2rem 1.5rem; }
@@ -367,6 +478,7 @@
     <li><a href="#languages"  onclick="goHomeAnchor('#languages');return false;">Linguaggi</a></li>
     <li><a href="#team"       onclick="goHomeAnchor('#team');return false;">Il Team</a></li>
     <li><a href="#"           onclick="showPage('magazine');return false;" id="nav-magazine">Magazine</a></li>
+    <li><a href="#"           onclick="showPage('sponsor');return false;"  id="nav-sponsor">Sponsor</a></li>
     <li><a href="#registration" onclick="goHomeAnchor('#registration');return false;">Registrati</a></li>
   </ul>
 </nav>
@@ -515,6 +627,7 @@
       <li><a href="#languages" onclick="goAnchor('#languages');return false;">Linguaggi</a></li>
       <li><a href="#team" onclick="goAnchor('#team');return false;">Il Team</a></li>
       <li><a href="#" onclick="showPage('magazine');return false;">Magazine</a></li>
+      <li><a href="#" onclick="showPage('sponsor');return false;">Sponsor</a></li>
       <li><a href="#registration" onclick="goAnchor('#registration');return false;">Registrati</a></li>
     </ul>
     <p class="footer-copy">© 2025 REM – Ombre e Chimere · Progetto accademico senza finalità commerciali</p>
@@ -632,6 +745,157 @@
 
 </div><!-- /page-magazine -->
 
+<!-- ======== SPONSOR ======== -->
+<div id="page-sponsor" class="page">
+
+  <div class="sp-hero">
+    <span class="sp-hero-label">REM – Ombre e Chimere</span>
+    <h1 class="sp-hero-title">Sponsor</h1>
+    <p class="sp-hero-desc">Le realtà che rendono possibile REM. Grazie a chi sceglie di investire nella cultura e nella creatività del territorio.</p>
+  </div>
+
+  <div class="sp-content">
+
+    <!--
+    ╔══════════════════════════════════════════════════════════════════╗
+    ║  COME AGGIUNGERE UNO SPONSOR                                     ║
+    ║  1. Scegli il tier: gold / silver / partner                      ║
+    ║  2. Copia un blocco .sp-card nel tier corretto                   ║
+    ║  3. Per il logo: sostituisci .sp-logo-placeholder con:           ║
+    ║       <img src="URL-logo.png" alt="Nome sponsor">                ║
+    ║     oppure incolla il logo come SVG inline                       ║
+    ║  4. Aggiorna .sp-name con il nome dello sponsor                  ║
+    ║  5. Aggiungi href="https://..." alla card per il link al sito    ║
+    ╚══════════════════════════════════════════════════════════════════╝
+    -->
+
+    <!-- GOLD -->
+    <div class="sp-tier gold reveal">
+      <div class="sp-tier-header">
+        <div class="sp-tier-line"></div>
+        <span class="sp-tier-label">Gold Sponsor</span>
+        <div class="sp-tier-line"></div>
+      </div>
+      <div class="sp-grid">
+
+        <a href="#" class="sp-card">
+          <div class="sp-logo-box">
+            <span class="sp-logo-placeholder">Logo Sponsor<br>Gold</span>
+          </div>
+          <span class="sp-name">Nome Sponsor</span>
+        </a>
+
+        <a href="#" class="sp-card">
+          <div class="sp-logo-box">
+            <span class="sp-logo-placeholder">Logo Sponsor<br>Gold</span>
+          </div>
+          <span class="sp-name">Nome Sponsor</span>
+        </a>
+
+      </div>
+    </div>
+
+    <!-- SILVER -->
+    <div class="sp-tier silver reveal reveal-delay-1">
+      <div class="sp-tier-header">
+        <div class="sp-tier-line"></div>
+        <span class="sp-tier-label">Silver Sponsor</span>
+        <div class="sp-tier-line"></div>
+      </div>
+      <div class="sp-grid">
+
+        <a href="#" class="sp-card">
+          <div class="sp-logo-box">
+            <span class="sp-logo-placeholder">Logo Sponsor</span>
+          </div>
+          <span class="sp-name">Nome Sponsor</span>
+        </a>
+
+        <a href="#" class="sp-card">
+          <div class="sp-logo-box">
+            <span class="sp-logo-placeholder">Logo Sponsor</span>
+          </div>
+          <span class="sp-name">Nome Sponsor</span>
+        </a>
+
+        <a href="#" class="sp-card">
+          <div class="sp-logo-box">
+            <span class="sp-logo-placeholder">Logo Sponsor</span>
+          </div>
+          <span class="sp-name">Nome Sponsor</span>
+        </a>
+
+      </div>
+    </div>
+
+    <!-- PARTNER -->
+    <div class="sp-tier partner reveal reveal-delay-2">
+      <div class="sp-tier-header">
+        <div class="sp-tier-line"></div>
+        <span class="sp-tier-label">Partner</span>
+        <div class="sp-tier-line"></div>
+      </div>
+      <div class="sp-grid">
+
+        <a href="#" class="sp-card">
+          <div class="sp-logo-box">
+            <span class="sp-logo-placeholder">Logo</span>
+          </div>
+          <span class="sp-name">Nome Partner</span>
+        </a>
+
+        <a href="#" class="sp-card">
+          <div class="sp-logo-box">
+            <span class="sp-logo-placeholder">Logo</span>
+          </div>
+          <span class="sp-name">Nome Partner</span>
+        </a>
+
+        <a href="#" class="sp-card">
+          <div class="sp-logo-box">
+            <span class="sp-logo-placeholder">Logo</span>
+          </div>
+          <span class="sp-name">Nome Partner</span>
+        </a>
+
+        <a href="#" class="sp-card">
+          <div class="sp-logo-box">
+            <span class="sp-logo-placeholder">Logo</span>
+          </div>
+          <span class="sp-name">Nome Partner</span>
+        </a>
+
+      </div>
+    </div>
+
+    <!-- CTA DIVENTA SPONSOR -->
+    <div class="sp-cta-box reveal">
+      <span class="sp-cta-label">Unisciti a REM</span>
+      <h2 class="sp-cta-title">Vuoi supportare il progetto?</h2>
+      <p class="sp-cta-text">REM – Ombre e Chimere è un'iniziativa culturale senza finalità commerciali. Se sei un'azienda, un'istituzione o una realtà creativa interessata a sostenere il progetto, contattaci per conoscere le opportunità di partnership.</p>
+      <a href="mailto:rem@esempio.com" class="sp-cta-email">Scrivici per diventare sponsor</a>
+    </div>
+
+    <div class="sp-howto reveal">
+      <p class="sp-howto-title">Come aggiungere uno sponsor</p>
+      <p class="sp-howto-text">Trova il commento "COME AGGIUNGERE UNO SPONSOR" nel codice, copia una card nel tier giusto (gold/silver/partner), sostituisci il placeholder con l'immagine del logo e aggiorna il nome. Puoi rimuovere questo banner quando non ti serve più.</p>
+    </div>
+
+  </div><!-- /sp-content -->
+
+  <footer>
+    <div class="footer-logo">REM</div>
+    <div class="footer-subtitle">Ombre e Chimere</div>
+    <ul class="footer-links">
+      <li><a href="#" onclick="showPage('home');return false;">Home</a></li>
+      <li><a href="#" onclick="showPage('magazine');return false;">Magazine</a></li>
+      <li><a href="#" onclick="showPage('home');setTimeout(()=>goAnchor('#registration'),80);return false;">Registrati</a></li>
+    </ul>
+    <p class="footer-copy">© 2025 REM – Ombre e Chimere · Progetto accademico senza finalità commerciali</p>
+  </footer>
+
+</div><!-- /page-sponsor -->
+
 <script>
   /* CURSOR */
   const cur=document.getElementById('cursor'), ring=document.getElementById('cursorRing');
@@ -650,6 +914,7 @@
     document.getElementById('page-'+name).classList.add('active');
     window.scrollTo(0,0);
     document.getElementById('nav-magazine').classList.toggle('active-nav', name==='magazine');
+    document.getElementById('nav-sponsor').classList.toggle('active-nav', name==='sponsor');
     setTimeout(triggerReveals, 100);
   }
 
